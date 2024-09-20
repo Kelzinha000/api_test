@@ -13,14 +13,11 @@ import usuarioRouter from "./Routes/usuarioRoutes.js"
 app.use(express.urlencoded({extended : true}))
 app.use(express.json())
 
+app.use("/user", usuarioRouter)
 
 app.use((request, response)=>{
     response.status(404).json({message:"Rota não encontrada"})
 })
-
-app.use("/user", usuarioRouter)
-app.use("/list", usuarioRouter)
-
 
 conn.sync().then(()=>{
     app.listen(PORT,()=>{

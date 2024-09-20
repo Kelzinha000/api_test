@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import conn from "../config/conn.js";
 
-const Usuario = conn.define(
+const usuario = conn.define(
 "usuarios",
 {
     nome:{
@@ -22,4 +22,4 @@ const Usuario = conn.define(
 }
 );
 
-export default Usuario; 
+export default usuario; 
